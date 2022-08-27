@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/poss.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    </head>
+    <body>
+            <!--nav bar-->
+            <nav>
+               <button class="but1"><a href="#" onclick="window.location.reload(true);">FressFood</a></button>
+                <button class="but2">  ? Help </button>
+            </nav>
+
+            <div class="parent">
+                <!--kid1-->
+                <div class="kid1">
+                    <!--new-item-->
+                     <div class="new-item">
+                        <div class="container">
+                            <div class="row">
+                                <div class=" col-sm-2 productImg">
+                                    <img id="productImage" src="img/product.jpg" alt=" Photo Not Found">
+                                </div>
+                                <div class="new-item-info col-sm-10" >
+    
+                                    <div class="name-item row">
+                                        <h2 class="col-sm-6" id="productName"></h2>
+                                        <button class="delete col-sm-6" id="deleteButton">Delete Item</button>
+                                    </div>
+    
+                                    <div class="price-item row">
+                                        <div class="price col-sm-4">
+                                            <h5>PRICE, USD</h5>
+                                            <h2 id="productPrice" ></h2>
+                                        </div>
+    
+                                        <div class="couantity col-sm-4 row">
+                                            <button class="decrease col-sm-4" id="decreaseBtn"> - </button>
+                                            <div class="couantity-num col-sm-4"> <h4 id="couantity-num"></h4></div>
+                                            <button class="increase col-sm-4" id="increaseBtn"> + </button>
+                                        </div>
+    
+                                        <div class="total-price col-sm-4">
+                                            <h5>TOTAL, USD</h5>
+                                            <h2 id="total-price"></h2>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                     <!--items list-->
+                     <div class="items">
+                        <div class="head">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-4" style="text-align:center ;">IN CART</div>
+                                    <div class="col-sm-2" style="text-align:center ;">PRICES</div>
+                                    <div class="col-sm-2" style="text-align:center ;">QUANTITY</div>
+                                    <div class="col-sm-2" style="text-align:center ;">TOTAL</div>
+                                    <div class="col-sm-2" style="text-align:center ;">Delete</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="details" id="detailsContainer">
+
+                        </div>
+                    </div>
+                    <!--total price-->
+                    <div class="total">
+                        <div class="cost row">
+                            <h4 class="col-sm-6">Cost before discount:</h4>
+                            <h4 class="col-sm-6 num" id="CostBeforeDiscount">0</h4>
+                        </div>
+                        <div class="discount row">
+                            <h4 class="col-sm-6">Discount</h4>
+                            <h4 class="col-sm-6 num" id="discount">0</h4>
+                        </div>
+                        <div class="total-to-pay row">
+                            <h1 class="col-sm-6">Total to pay:</h1>
+                            <h1 class="col-sm-6 num" id="costAfterDiscount">0</h1>
+                        </div>
+                    </div>   
+                    <!--get Receipt-->
+                    <div class="get-receipt" id="getLastReceipt">
+                        <div class="receipt-head" id="receiptHead"></div>
+                        <div class="receipt-body" id="receiptBody"></div>
+                        <div class="receipt-accounment" id="receiptAccounment"> </div>
+
+                    </div> 
+                </div>
+
+                <!--kid2-->
+                <div class="kid2">
+                    <img  src="img/pos-sistemi.jpg" />
+                    <!--search and add in list -->
+                    <div class="chooses">
+                        <button class="Enter-to-Search"> <input id="searchField" placeholder=" Enter Barcode to Search "/></button>
+                        <button  id="searchButton"> Barcode Search</button>
+                        <button id="addPackages"> Add Packages</button>
+                    </div>
+                    <!--pay button to get receipt-->
+                    <button class="pay-button" id="payButton"><h1>pay</h1></button>
+
+                    <!--edite-products-->
+                    <div class="edite-products">
+                        <div class="text-center edite-product-button">
+                                 <div class="btn-group">
+                                    <button type="button" class="btn btn-success m-5"  id="updateProductInMarket">Update</button>
+                                    <button type="button" class="btn btn-primary m-5" id="AddProductToMarket">Add to Market</button>
+                                </div>
+                        </div>
+                        <div class="d-flex flex-column text-center product-elements">
+                                <form>
+                                    <div class="product-name form-group0">
+                                        <label>Name Of Product</label> <span id="error-name"></span>
+                                        <input id="editeNameOfProduct" placeholder=" " type="text" required/>
+                                    </div>
+                                    <div class="product-price form-group0"> 
+                                        <label>Price Of Product</label> <span id="error-price"></span>
+                                        <input id="editePriceOfProduct" placeholder=" " type="number" required/>
+                                    </div>
+                                    <div class="product-id form-group0"> 
+                                        <label>Id Of Product</label> <span id="error-id"></span>
+                                        <input id="editeIdOfProduct" placeholder=" " type="number" required/>
+                                    </div>
+                                    <div class="product-Image form-group0"> 
+                                        <label>Image Of Product</label> <span id="error-Image"></span>
+                                        <input id="editeImageOfProduct" placeholder=" " type="file" required/>
+                                    </div>
+                                    <div class="form-group0 " id="done">
+                                       Done
+                                    </div>
+                                </form>
+                        </div>
+                    </div>           
+                </div>
+            </div>
+        <script src="js/poss.js"></script>        
+    </body>
+</html>
